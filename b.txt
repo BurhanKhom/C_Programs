@@ -1,0 +1,9 @@
+5867503 CO-Seminar.pages
+5867527 CO-Seminar.pdf
+5813800 Sem-2 Result.pdf
+5884045 a
+5882662 a.out
+5884058 b.txt
+5881882 insert.c
+5878407 pat.c
+5880182 str.c
