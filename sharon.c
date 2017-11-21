@@ -1,53 +1,47 @@
 #include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
 struct node{
 
 	char s[10];
 	char price[10^9];
-	int choice=0;
 };
 
 int main()
 {
-	int n;
+	int n, i, j=0;
+	char price[10^9];
+	char name[10];
 	scanf("%d", &n);
-	int temp=n;
 	struct node a[n];
-	int i=0;
-	while(n--)
+	for (i=0; i<n; i++)
 	{
-		scanf("%s%lld", a[i].s, a[i].price);
+		j=0;
 		int four=0, seven=0;
-
-		for(int j=0; a[i].price[j]!='\0'; j++)
+		scanf("%s %s", name, price);
+		while(price[j]!='\0')
 		{
-			if(a[i].price[j]!='4' || a[i].price[j]!='7')
+			if(price[j]=='7')
+				seven++;
+			else if(price[j]=='4')
+				four++;
+			else
+				break;
+
+			j++;
+		}
+		if(j==strlen(price))
+		{
+			if(seven==four)
 				{
-					a[i].choice=0;
-					break;
+					strcpy(a[i].s, name);
+					strcpy(a[i].price, price);
 				}
-			else if(a[i].price[j]=='4')
-					four++;
-			else 
-					seven++;
-		}
-		if(four==seven)
-			a[i].choice=1;
-
-		i++;
-	}
-
-	for(i=0; i<temp; i++)
-	{	
-		if(a[i].choice==1)
-		{
-			if(strcmp(a[i].price))
 		}
 
-
 	}
-
-
-
+	for(int i=0; i<n; i++)
+		printf("Name : %s\tPrice : %s\n", a[i].s, a[i].price);
 
 
 }
